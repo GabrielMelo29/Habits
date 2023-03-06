@@ -45,7 +45,6 @@ header {
   font-family: "Inter";
   font-weight: 600;
   font-size: 16px;
-  line-height: 125%;
 }
 
 #form-habits {
@@ -117,10 +116,16 @@ input:checked {
   border-radius: 8px;
   border: 1px solid #8b5cf6;
   background-color: transparent;
+  color: white;
 
   display: flex;
+  gap: 12px;
   justify-content: center;
   cursor: pointer;
+
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 16px;
 }
 
 .modal-backdrop {
@@ -173,7 +178,6 @@ input:checked {
   font: "Inter";
   font-weight: 600;
   font-size: 16px;
-  line-height: 125%;
 }
 #close {
   position: absolute;
@@ -190,7 +194,6 @@ input:checked {
   font-weight: 600;
   font-size: 16px;
 }
-
 
 @media (max-width: 768px) {
   header {
@@ -211,18 +214,32 @@ input:checked {
   }
 
   .btn-day {
-    padding: 10px;
-  }
-  .btn-day div {
-    display: none;
+    padding: 8px;
+
+    gap: 5px;
+
+    font-size: 13px;
   }
 
   #form-habits {
     padding: 172px 28px 30px 28px;
   }
 
-  .btn-habit {
-    margin-left: 38px;
+  .btn-habit div {
+    display: none;
+  }
+
+  .modal-options {
+    padding: 20px;
+  }
+  .modal-options div {
+    width: 250px;
+  }
+  #change,
+  #delete {
+    padding: 10px 18px;
+
+    font-size: 14px;
   }
 }
 
