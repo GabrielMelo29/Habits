@@ -9,6 +9,7 @@ body {
   color: white;
 
   height: 100vh;
+  position: relative;
 }
 
 header {
@@ -22,9 +23,15 @@ header {
 
   position: fixed;
 }
-
-button {
-  padding: 16px 24px;
+.logo {
+  font-family: "Inter";
+  font-weight: 600;
+}
+.logo span {
+  color: #8b5cf6;
+}
+.btn-day {
+  padding: 12px 20px;
   border-radius: 8px;
   border: 1px solid #8b5cf6;
   background-color: transparent;
@@ -33,6 +40,7 @@ button {
   display: flex;
   align-items: center;
   gap: 12px;
+  cursor: pointer;
 
   font-family: "Inter";
   font-weight: 600;
@@ -42,20 +50,23 @@ button {
 
 #form-habits {
   display: flex;
-  padding: 182px 48px 48px;
+  gap: 30px;
+  padding: 182px 48px 30px 48px;
 }
 
 .habits {
-  margin-top: 55px;
+  margin-top: 58px;
+}
+.new-habits {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 10px;
 }
 .habit {
-  width: 64px;
-  height: 64px;
+  width: 60px;
+  height: 55px;
 
-  font-size: 32px;
+  font-size: 20px;
 
   display: flex;
   align-items: center;
@@ -64,19 +75,20 @@ button {
 
 .days {
   display: flex;
-  margin-left: 32px;
-  gap: 48px;
+  gap: 40px;
+  padding: 5px;
 }
 .day {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  align-items: center;
+  gap: 23px;
 }
 .day div {
-  margin-bottom: 8px;
+  margin-bottom: 13px;
 
   font-family: "Roboto Mono";
-  font-size: 20px;
+  font-size: 18px;
   line-height: 125%;
 
   color: #a1a1aa;
@@ -87,8 +99,8 @@ input {
   appearance: none;
   -webkit-appearance: none;
 
-  width: 64px;
-  height: 64px;
+  width: 40px;
+  height: 40px;
 
   border-radius: 2px solid #27272a;
   border-radius: 8px;
@@ -99,8 +111,131 @@ input:checked {
   border: 2px solid #a78bfa;
 }
 
+.btn-habit {
+  margin-left: 58px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #8b5cf6;
+  background-color: transparent;
+
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #000000ab;
+  display: none;
+}
+.modal-backdrop.active {
+  display: flex;
+}
+
+.modal-options {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: 30px;
+  border-radius: 8px;
+  background-color: #8b5cf6;
+}
+.modal-options.active {
+  display: flex;
+}
+.modal-options div {
+  position: relative;
+  height: 130px;
+  width: 280px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+#change,
+#delete {
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 1px solid #09090a;
+  background-color: #09090a;
+  color: white;
+
+  cursor: pointer;
+
+  font: "Inter";
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+}
+#close {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  padding: 1px 4px;
+  border-radius: 8px;
+  background-color: #09090a;
+  color: white;
+
+  cursor: pointer;
+
+  font-weight: 600;
+  font-size: 16px;
+}
+
+
+@media (max-width: 768px) {
+  header {
+    padding: 38px;
+  }
+  #form-habits {
+    padding: 172px 38px 30px 38px;
+  }
+
+  .btn-habit {
+    margin-left: 48px;
+  }
+}
+
 @media (max-width: 570px) {
-  button div {
+  header {
+    padding: 38px 28px;
+  }
+
+  .btn-day {
+    padding: 10px;
+  }
+  .btn-day div {
     display: none;
+  }
+
+  #form-habits {
+    padding: 172px 28px 30px 28px;
+  }
+
+  .btn-habit {
+    margin-left: 38px;
+  }
+}
+
+@media (max-width: 375px) {
+  header {
+    padding: 38px 18px;
+  }
+
+  #form-habits {
+    padding: 172px 18px 30px 18px;
+  }
+
+  .btn-habit {
+    margin-left: 28px;
   }
 }

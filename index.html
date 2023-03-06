@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,14 +11,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>myHabits</title>
 
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
+    <div class="modal-backdrop"></div>
+
     <header>
-      <img src="assets/logo.svg" alt="logo do aplicativo Habits" />
-      <button>
+      <div>
+        <h1 class="logo">my<span>Habits</span></h1>
+      </div>
+      <button class="btn-day">
         <img src="assets/plus.svg" alt="ícone sinal de mais roxo" />
         <div>Registrar o meu dia</div>
       </button>
@@ -26,14 +31,31 @@
 
     <form id="form-habits">
       <div class="habits">
-        <div class="habit" data-name="run">🏃‍♂️</div>
-        <div class="habit" data-name="water">💧</div>
-        <div class="habit" data-name="food">🍎</div>
+        <div class="new-habits"></div>
       </div>
+
       <div class="days"></div>
     </form>
 
+    <button class="btn-habit">
+      <img src="assets/plus.svg" alt="ícone sinal de mais roxo" />
+    </button>
+
+    <div class="modal-options">
+      <div>
+        <button id="change">Editar nome</button>
+        <button id="delete">Apagar</button>
+        <button id="close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/gh/maykbrito/libs/NLWSetup/source/NLWSetup.js"></script>
-    <script src="scrit.js"></script>
+    <script
+      src="https://kit.fontawesome.com/ea393de4c9.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
   </body>
 </html>
